@@ -18,5 +18,5 @@ spring:
 
 jwt:
     issuer: kosta-hms
-    secret_key: mysecrethmsmysecrethmsmysecrethmsmysecrethms
-    access_duration: 1800000 # 30분 (30 * 60 * 1000)
+    secret_key: mysecrethmsmysecrethmsmysecrethmsmysecrethmsmysecrethms
+    access_duration: 10000 # 30분 (30 * 60 * 1000)

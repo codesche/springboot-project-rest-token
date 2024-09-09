@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 
 import javax.crypto.SecretKey;
@@ -20,7 +21,7 @@ import java.util.Date;
 public class JwtProvider {
     // JWT 관련 설정 정보 객체 주입
     private final JwtProperties jwtProperties;
-    private UserDetailServiceImpl userDetailsService;
+    private final UserDetailsService userDetailsService;
 
     // JWT Access 토큰 생성
     public String generateAccessToken(User user) {
@@ -86,6 +87,7 @@ public class JwtProvider {
     public Authentication getAuthenticationByToken(String token) {
         log.info("[getAuthenticationByToken] 토큰 인증 정보 조회");
         String userEmail = getUserEmailByToken(token);
+        log.info(userEmail);
         User user = (User) userDetailsService.loadUserByUsername(userEmail);
         Authentication authentication = new UsernamePasswordAuthenticationToken(
               user, token, user.getAuthorities()
@@ -98,7 +100,7 @@ public class JwtProvider {
     public String getUserEmailByToken(String token) {
         log.info("[getUserEmailByToken] 사용자 ID 추출");
         Claims claims = getClaims(token);
-        String email = claims.get("email", String.class);
+        String email = claims.get("sub", String.class);
         return email;
     }
 

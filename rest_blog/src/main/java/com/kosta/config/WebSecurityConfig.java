@@ -1,5 +1,6 @@
 package com.kosta.config;
 
+import com.kosta.service.UserDetailServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -8,6 +9,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.annotation.web.configurers.HttpBasicConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
@@ -17,6 +19,15 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @EnableWebSecurity
 @RequiredArgsConstructor
 public class WebSecurityConfig {
+
+    private final UserDetailsService userDetailsService;
+    private final JwtProperties jwtProperties;
+
+    // JWT Provider
+    @Bean
+    JwtProvider jwtProvider() {
+        return new JwtProvider(jwtProperties, userDetailsService);
+    }
 
     // 암호화 빈
     @Bean
@@ -37,7 +48,7 @@ public class WebSecurityConfig {
             ).permitAll()
             // AuthController 중 나머지들은 "ADMIN"만 가능
             .requestMatchers(
-                new AntPathRequestMatcher("/api/auth/**")        // "ADMIN"만 가능
+                new AntPathRequestMatcher("/api/auth/")             // "ADMIN"만 가능
             ).hasRole("ADMIN")
             // 그 밖의 다른 요청들은 인증을 통과한(로그인한) 사용자라면 모두 접근할 수 있도록 한다.
             .anyRequest().authenticated()
@@ -47,7 +58,7 @@ public class WebSecurityConfig {
         http.sessionManagement((sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS)));
 
         // (토큰을 통해 검증할 수 있도록) 필터 추가
-//        http.addFilterBefore(추가필터, UsernamePasswordAuthenticationFilter);
+        http.addFilterBefore(new JwtAuthenticationFilter(jwtProvider()), UsernamePasswordAuthenticationFilter.class);
 
         // HTTP 기본 설정
         http.httpBasic(HttpBasicConfigurer::disable);
