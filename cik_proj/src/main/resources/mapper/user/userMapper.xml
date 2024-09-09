@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kosta.mapper.UserMapper">
+    <select id="selectAllUser" resultType="com.kosta.dto.UserDTO">
+        SELECT * FROM users_tbl WHERE is_deleted = 'n'
+    </select>
+    <insert id="insertUser" parameterType="com.kosta.dto.UserDTO">
+        INSERT INTO users_tbl (name, email) VALUES (#{name}, #{email})
+    </insert>
+    <update id="deleteUser" parameterType="int">
+        UPDATE users_tbl SET is_deleted = 'y' WHERE id = #{id}
+    </update>
+    <select id="selectUserById" parameterType="int">
+        SELECT * FROM users_tbl WHERE id = #{id} AND is_deleted = 'n'
+    </select>
+</mapper>

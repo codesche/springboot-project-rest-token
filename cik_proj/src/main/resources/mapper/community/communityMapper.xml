@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kosta.mapper.CommunityMapper">
+    <resultMap type="com.kosta.dto.CommunityDTO" id="CommunityMap">
+        <id property="id" column="id" />
+        <result property="title" column="title" />
+        <result property="content" column="content" />
+        <result property="hit" column="hit" />
+        <result property="createdAt" column="created_at" />
+        <association property="creator" javaType="com.kosta.dto.UserDTO">
+            <id property="id" column="creator_id" />    
+            <result property="name" column="name" />    
+            <result property="email" column="email" />
+        </association>
+    </resultMap>
+    
+    <select id="selectAllCommunity" resultMap="CommunityMap">
+        SELECT ct.id, ct.title, ct.content, ct.hit, ct.created_at, ct.creator_id, ut.name, ut.email
+        FROM community_tbl ct
+        LEFT JOIN users_tbl ut ON ct.creator_id = ut.id
+        WHERE ct.is_deleted = 'n'
+    </select>
+    <insert id="insertCommunity" parameterType="com.kosta.dto.CommunityDTO" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO community_tbl
+            (title, content, creator_id)
+        VALUES
+            (#{title}, #{content}, #{creator.id})
+    </insert>
+    <select id="selectCommunityById" resultMap="CommunityMap" parameterType="int">
+        SELECT ct.id, ct.title, ct.content, ct.hit, ct.created_at, ct.creator_id, ut.name, ut.email
+        FROM community_tbl ct
+        LEFT JOIN users_tbl ut ON ct.creator_id = ut.id
+        WHERE ct.id = #{id} AND ct.is_deleted = 'n'
+    </select>
+    <update id="updateHit" parameterType="int">
+        UPDATE community_tbl SET hit = hit + 1 WHERE id = #{id} AND is_deleted = 'n'
+    </update>
+    <update id="updateCommunity" parameterType="com.kosta.dto.CommunityDTO">
+        UPDATE community_tbl SET title = #{title}, content = #{content} WHERE id = #{id} AND is_deleted = 'n'
+    </update>
+    <update id="deleteCommunity" parameterType="int">
+        UPDATE community_tbl SET is_deleted = 'y' WHERE id = #{id}
+    </update>
+    
+    <select id="selectAllFileByCommunityId" resultType="com.kosta.dto.FileDTO" parameterType="int">
+        SELECT id, community_id, origin_file_name, stored_file_path, file_size FROM community_file_tbl WHERE id = #{id} 
+    </select>
+    <insert id="insertFile" parameterType="com.kosta.dto.FileDTO">
+        INSERT INTO community_file_tbl (community_id, origin_file_name, stored_file_path, file_size)
+        VALUE
+        <foreach collection="list" item="f" separator=",">
+            (#{f.communityId}, #{f.originFileName}, #{f.storedFilePath}, #{f.fileSize})
+        </foreach>
+    </insert>
+    <delete id="deleteFileByCommunityId" parameterType="int">
+        DELETE FROM community_file_tbl WHERE id = #{id}
+    </delete>
+</mapper>

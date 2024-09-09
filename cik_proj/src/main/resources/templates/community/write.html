@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html 
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layouts/default}"
+>
+	<div layout:fragment="content" class="container my-4">
+	   <h2 class="mb-4" th:text="${community == null ? '게시글 작성' : '게시글 수정'}"></h2>
+		<form
+		  th:action="@{${community == null} ? '/community/write' : '/community/modify'}"
+		  th:method="${community == null ? 'POST' : 'PATCH'}"
+		  enctype="multipart/form-data">
+		    <input type="hidden" th:if="${community != null}" name="id" th:value="${community.id}" />
+		    
+		    <div class="mb-3">
+		        <label for="title" class="form-label">제목</label>
+		        <input type="text" class="form-control" id="title" name="title" placeholder="제목을 입력하세요" th:value="${community != null ? community.title : ''}" required>
+		    </div>
+		    <div class="mb-3">
+		        <label for="content" class="form-label">내용</label>
+		        <textarea class="form-control" id="content" name="content" rows="5" placeholder="내용을 입력하세요" required th:text="${community != null ? community.content : ''}"></textarea>
+		    </div>
+		    <div class="mb-3">
+		        <label for="creator" class="form-label">작성자</label>
+		        <select id="creator" name="creator_id" class="form-select" required>
+		            <option selected>작성자를 선택하세요</option>
+                    <option th:each="user: ${userList}" th:value="${user.id}" th:text="${user.name}"></option>
+		        </select>
+		    </div>
+		    <div class="mb-3">
+		        <label for="files" class="form-label">파일 첨부</label>
+		        <input type="file" class="form-control" id="files" name="files" multiple>
+		        <div th:if="${community != null && !community.fileList.isEmpty()}">
+		            <h5 class="mt-3">첨부된 파일:</h5>
+		            <ul>
+		                <li th:each="file : ${community.fileList}">
+		                    <a th:href="@{${file.storedFilePath}}" th:text="${file.originFileName}"></a>
+		                </li>
+		            </ul>
+		        </div>
+		    </div>
+		    <button type="submit" class="btn btn-primary" th:text="${community == null ? '게시글 작성' : '게시글 수정'}"></button>
+		</form>
+	</div>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layouts/default}">
+	<th:block layout:fragment="css">
+		<style>
+			.active {
+				font-size: 2rem;
+			}
+			.inactive {
+				font-size: 3rem;
+			}
+		</style>
+	</th:block>
+	
+	
+	<div layout:fragment="content">
+		<h1 th:text="${keyword} + '의 친구들'"></h1>
+	
+		<!-- 반복문 th:each="반복자 : 리스트변수" -->
+		<ul>
+			<li th:each="friend : ${list}"
+				th:text="${friend.name} + ' : ' +${friend.addr}"></li>
+		</ul>
+	
+		<h1 th:text="${keyword} + '의 서울 친구들'"></h1>
+	
+		<!-- 조건문 -->
+		<ul>
+			<li th:each="sFriend : ${list}" th:if="${sFriend.addr == '서울'}"
+				th:text=${sFriend.name}></li>
+		</ul>
+	
+		<h1 th:text="${keyword} + '의 서울 친구들'"></h1>
+	
+		<!-- 조건 연산 -->
+		<ul>
+			<li th:each="sFriend : ${list}"
+				th:text="${sFriend.addr == '서울' ? sFriend.name : '-' }"></li>
+		</ul>
+	
+		<h1>서울은 큰 글씨, 지방은 덜 큰 글씨</h1>
+		<ul>
+			<li th:each="friend : ${list}"><span th:text="${friend.name}"
+				th:classappend="${friend.addr == '서울' ? 'inactive' : 'active'}">
+			</span></li>
+		</ul>
+	</div>
+</html>
+
+

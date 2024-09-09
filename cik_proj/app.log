@@ -1,0 +1,116 @@
+2024-08-19 08:39:57 [restartedMain] INFO  com.kosta.CikProjApplication - Starting CikProjApplication using Java 21.0.3 with PID 9624 (C:\Users\WD\Desktop\2024-07_Java_KOSTA\4_spring\spring_workspace\cik_proj\bin\main started by WD in C:\Users\WD\Desktop\2024-07_Java_KOSTA\4_spring\spring_workspace\cik_proj)
+2024-08-19 08:39:57 [restartedMain] INFO  com.kosta.CikProjApplication - No active profile set, falling back to 1 default profile: "default"
+2024-08-19 08:39:57 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-08-19 08:39:57 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-08-19 08:39:58 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-08-19 08:39:58 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-08-19 08:39:58 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-19 08:39:58 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-08-19 08:39:58 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1248 ms
+2024-08-19 08:39:59 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-08-19 08:39:59 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-08-19 08:39:59 [restartedMain] INFO  com.kosta.CikProjApplication - Started CikProjApplication in 2.915 seconds (process running for 3.805)
+2024-08-19 08:39:59 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-08-19 08:39:59 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-08-19 08:39:59 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-08-19 08:39:59 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-08-19 08:40:00 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@40a8137c
+2024-08-19 08:40:00 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-08-19 08:40:00 [http-nio-8080-exec-2] WARN  com.kosta.controller.UserController - test
+2024-08-19 08:40:01 [http-nio-8080-exec-1] WARN  com.kosta.controller.UserController - test
+2024-08-19 08:41:06 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-08-19 08:41:06 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-08-19 08:41:06 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-08-19T08:47:21.127+09:00  INFO 5916 --- [cik_proj] [restartedMain] com.kosta.CikProjApplication             : Starting CikProjApplication using Java 21.0.3 with PID 5916 (C:\Users\WD\Desktop\2024-07_Java_KOSTA\4_spring\spring_workspace\cik_proj\bin\main started by WD in C:\Users\WD\Desktop\2024-07_Java_KOSTA\4_spring\spring_workspace\cik_proj)
+2024-08-19T08:47:21.127+09:00  INFO 5916 --- [cik_proj] [restartedMain] com.kosta.CikProjApplication             : No active profile set, falling back to 1 default profile: "default"
+2024-08-19T08:47:21.409+09:00  INFO 5916 --- [cik_proj] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-19T08:47:21.410+09:00  INFO 5916 --- [cik_proj] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-19T08:47:21.410+09:00  INFO 5916 --- [cik_proj] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-19T08:47:21.432+09:00  INFO 5916 --- [cik_proj] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-19T08:47:21.432+09:00  INFO 5916 --- [cik_proj] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 302 ms
+2024-08-19T08:47:29.081+09:00  INFO 9472 --- [cik_proj] [restartedMain] com.kosta.CikProjApplication             : Starting CikProjApplication using Java 21.0.3 with PID 9472 (C:\Users\WD\Desktop\2024-07_Java_KOSTA\4_spring\spring_workspace\cik_proj\bin\main started by WD in C:\Users\WD\Desktop\2024-07_Java_KOSTA\4_spring\spring_workspace\cik_proj)
+2024-08-19T08:47:29.083+09:00  INFO 9472 --- [cik_proj] [restartedMain] com.kosta.CikProjApplication             : No active profile set, falling back to 1 default profile: "default"
+2024-08-19T08:47:29.352+09:00  INFO 9472 --- [cik_proj] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-08-19T08:47:29.353+09:00  INFO 9472 --- [cik_proj] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-08-19T08:47:30.455+09:00  INFO 9472 --- [cik_proj] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-19T08:47:30.470+09:00  INFO 9472 --- [cik_proj] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-19T08:47:30.470+09:00  INFO 9472 --- [cik_proj] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-19T08:47:30.527+09:00  INFO 9472 --- [cik_proj] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-19T08:47:30.528+09:00  INFO 9472 --- [cik_proj] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1175 ms
+2024-08-19T08:47:31.268+09:00  INFO 9472 --- [cik_proj] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-08-19T08:47:31.313+09:00  INFO 9472 --- [cik_proj] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-08-19T08:47:31.323+09:00  INFO 9472 --- [cik_proj] [restartedMain] com.kosta.CikProjApplication             : Started CikProjApplication in 2.722 seconds (process running for 3.653)
+2024-08-19T08:48:36.595+09:00  INFO 9472 --- [cik_proj] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-08-19 08:48:36 [restartedMain] INFO  com.kosta.CikProjApplication - Starting CikProjApplication using Java 21.0.3 with PID 9472 (C:\Users\WD\Desktop\2024-07_Java_KOSTA\4_spring\spring_workspace\cik_proj\bin\main started by WD in C:\Users\WD\Desktop\2024-07_Java_KOSTA\4_spring\spring_workspace\cik_proj)
+2024-08-19 08:48:36 [restartedMain] INFO  com.kosta.CikProjApplication - No active profile set, falling back to 1 default profile: "default"
+2024-08-19 08:48:36 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-08-19 08:48:36 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-08-19 08:48:36 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-19 08:48:37 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-08-19 08:48:37 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 303 ms
+2024-08-19 08:48:37 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-08-19 08:48:37 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-08-19 08:48:37 [restartedMain] INFO  com.kosta.CikProjApplication - Started CikProjApplication in 0.528 seconds (process running for 69.521)
+2024-08-19 08:48:37 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2024-08-19 08:49:43 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-08-19 08:49:43 [restartedMain] INFO  c.k.CikProjApplication - Starting CikProjApplication using Java 21.0.3 with PID 9472 (C:\Users\WD\Desktop\2024-07_Java_KOSTA\4_spring\spring_workspace\cik_proj\bin\main started by WD in C:\Users\WD\Desktop\2024-07_Java_KOSTA\4_spring\spring_workspace\cik_proj)
+2024-08-19 08:49:43 [restartedMain] INFO  c.k.CikProjApplication - No active profile set, falling back to 1 default profile: "default"
+2024-08-19 08:49:43 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-08-19 08:49:43 [restartedMain] INFO  o.a.c.c.StandardService - Starting service [Tomcat]
+2024-08-19 08:49:43 [restartedMain] INFO  o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-19 08:49:43 [restartedMain] INFO  o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext
+2024-08-19 08:49:43 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 318 ms
+2024-08-19 08:49:44 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-08-19 08:49:44 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-08-19 08:49:44 [restartedMain] INFO  c.k.CikProjApplication - Started CikProjApplication in 0.547 seconds (process running for 136.507)
+2024-08-19 08:49:44 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2024-08-19 08:50:13 [RMI TCP Connection(6)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2024-08-19 08:50:20 [restartedMain] INFO  c.k.CikProjApplication - Starting CikProjApplication using Java 21.0.3 with PID 3524 (C:\Users\WD\Desktop\2024-07_Java_KOSTA\4_spring\spring_workspace\cik_proj\bin\main started by WD in C:\Users\WD\Desktop\2024-07_Java_KOSTA\4_spring\spring_workspace\cik_proj)
+2024-08-19 08:50:20 [restartedMain] INFO  c.k.CikProjApplication - No active profile set, falling back to 1 default profile: "default"
+2024-08-19 08:50:20 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-08-19 08:50:20 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-08-19 08:50:21 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-08-19 08:50:21 [restartedMain] INFO  o.a.c.c.StandardService - Starting service [Tomcat]
+2024-08-19 08:50:21 [restartedMain] INFO  o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-19 08:50:21 [restartedMain] INFO  o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext
+2024-08-19 08:50:21 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1265 ms
+2024-08-19 08:50:22 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-08-19 08:50:22 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-08-19 08:50:22 [restartedMain] INFO  c.k.CikProjApplication - Started CikProjApplication in 3.029 seconds (process running for 4.116)
+2024-08-19 08:50:59 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-08-19 08:50:59 [restartedMain] INFO  com.kosta.CikProjApplication - Starting CikProjApplication using Java 21.0.3 with PID 3524 (C:\Users\WD\Desktop\2024-07_Java_KOSTA\4_spring\spring_workspace\cik_proj\bin\main started by WD in C:\Users\WD\Desktop\2024-07_Java_KOSTA\4_spring\spring_workspace\cik_proj)
+2024-08-19 08:50:59 [restartedMain] INFO  com.kosta.CikProjApplication - No active profile set, falling back to 1 default profile: "default"
+2024-08-19 08:50:59 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-08-19 08:50:59 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-08-19 08:50:59 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-19 08:50:59 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-08-19 08:50:59 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 334 ms
+2024-08-19 08:50:59 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-08-19 08:50:59 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-08-19 08:50:59 [restartedMain] INFO  com.kosta.CikProjApplication - Started CikProjApplication in 0.558 seconds (process running for 41.209)
+2024-08-19 08:50:59 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2024-08-19 08:51:49 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-08-19 08:51:50 [restartedMain] INFO  com.kosta.CikProjApplication - Starting CikProjApplication using Java 21.0.3 with PID 3524 (C:\Users\WD\Desktop\2024-07_Java_KOSTA\4_spring\spring_workspace\cik_proj\bin\main started by WD in C:\Users\WD\Desktop\2024-07_Java_KOSTA\4_spring\spring_workspace\cik_proj)
+2024-08-19 08:51:50 [restartedMain] INFO  com.kosta.CikProjApplication - No active profile set, falling back to 1 default profile: "default"
+2024-08-19 08:51:50 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-08-19 08:51:50 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-08-19 08:51:50 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-19 08:51:50 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-08-19 08:51:50 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 386 ms
+2024-08-19 08:51:50 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-08-19 08:51:50 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-08-19 08:51:50 [restartedMain] INFO  com.kosta.CikProjApplication - Started CikProjApplication in 0.706 seconds (process running for 92.224)
+2024-08-19 08:51:50 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2024-08-19 08:51:57 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-08-19 08:51:57 [restartedMain] INFO  com.kosta.CikProjApplication - Starting CikProjApplication using Java 21.0.3 with PID 3524 (C:\Users\WD\Desktop\2024-07_Java_KOSTA\4_spring\spring_workspace\cik_proj\bin\main started by WD in C:\Users\WD\Desktop\2024-07_Java_KOSTA\4_spring\spring_workspace\cik_proj)
+2024-08-19 08:51:57 [restartedMain] INFO  com.kosta.CikProjApplication - No active profile set, falling back to 1 default profile: "default"
+2024-08-19 08:51:58 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-08-19 08:51:58 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-08-19 08:51:58 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-19 08:51:58 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-08-19 08:51:58 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 506 ms
+2024-08-19 08:51:58 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-08-19 08:51:58 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-08-19 08:51:58 [restartedMain] INFO  com.kosta.CikProjApplication - Started CikProjApplication in 1.128 seconds (process running for 100.255)
+2024-08-19 08:51:58 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2024-08-19 08:51:59 [RMI TCP Connection(6)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
