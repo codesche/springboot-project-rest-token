@@ -1,7 +1,6 @@
-package com.kosta.config;
+package com.kosta.security;
 
 import com.kosta.entity.User;
-import com.kosta.service.UserDetailServiceImpl;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
@@ -28,6 +27,13 @@ public class JwtProvider {
         log.info("[generateAccessToken] 토큰을 생성합니다.");
         Date now = new Date();
         Date expiredDate = new Date(now.getTime() + jwtProperties.getAccessDuration());
+        return makeToken(user, expiredDate);
+    }
+
+    public String generateRefreshToken(User user) {
+        log.info("[generateRefreshToken] 리프레시 토큰을 생성합니다.");
+        Date now = new Date();
+        Date expiredDate = new Date(now.getTime() + jwtProperties.getRefreshDuration());
         return makeToken(user, expiredDate);
     }
 
@@ -89,10 +95,9 @@ public class JwtProvider {
         String userEmail = getUserEmailByToken(token);
         log.info(userEmail);
         User user = (User) userDetailsService.loadUserByUsername(userEmail);
-        Authentication authentication = new UsernamePasswordAuthenticationToken(
+        return new UsernamePasswordAuthenticationToken(
               user, token, user.getAuthorities()
         );
-        return authentication;
     }
 
 
