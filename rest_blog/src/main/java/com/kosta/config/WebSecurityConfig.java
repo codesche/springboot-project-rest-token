@@ -1,6 +1,7 @@
 package com.kosta.config;
 
-import com.kosta.service.UserDetailServiceImpl;
+import com.kosta.repository.UserRepository;
+import com.kosta.security.*;
 import com.kosta.util.TokenUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -29,6 +30,7 @@ import java.util.Collections;
 public class WebSecurityConfig {
 
     private final UserDetailsService userDetailsService;
+    private final UserRepository userRepository;
     private final JwtProperties jwtProperties;
 
     // JWT Provider
@@ -41,7 +43,7 @@ public class WebSecurityConfig {
     }
 
     private JwtAuthenticationService jwtAuthenticationService() {
-        return new JwtAuthenticationService(tokenUtils());
+        return new JwtAuthenticationService(tokenUtils(), userRepository);
     }
 
     @Bean
@@ -66,10 +68,11 @@ public class WebSecurityConfig {
         http.authorizeHttpRequests(auth ->
             // 특정 URL 경로에 대해서는 인증 없이 접근 가능
             auth.requestMatchers(
-                new AntPathRequestMatcher("/api/auth/signup"),       // 회원가입
-                new AntPathRequestMatcher("/api/auth/duplicate"),     // 이메일 중복체크
-                new AntPathRequestMatcher("/img/**"),                   // 이미지
-            new AntPathRequestMatcher("/api/post", "GET")
+                new AntPathRequestMatcher("/api/auth/signup"),              // 회원가입
+                new AntPathRequestMatcher("/api/auth/duplicate"),           // 이메일 중복체크
+                new AntPathRequestMatcher("/img/**"),                       // 이미지
+                new AntPathRequestMatcher("/api/auth/refresh-token"),       // 토큰 재발급
+                new AntPathRequestMatcher("/api/post", "GET")
             ).permitAll()
             // AuthController 중 나머지들은 "ADMIN"만 가능
             .requestMatchers(
