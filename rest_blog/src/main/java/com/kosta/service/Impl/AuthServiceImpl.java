@@ -117,9 +117,10 @@ public class AuthServiceImpl implements AuthService {
 
 		// 유효한 토큰에서 이메일 추출
 		String userEmail = jwtProvider.getUserEmailByToken(refreshToken);
-		User user = userRepository.findByEmail(userEmail).orElse(null);
+		log.info("추출한 이메일 : {} ", userEmail);
 
 		// 이메일을 통한 사용자 조회 후, refreshToken 비교
+		User user = userRepository.findByEmail(userEmail).orElse(null);
 		if (user == null || !user.getRefreshToken().equals(refreshToken)) {
 			return null;
 		}
