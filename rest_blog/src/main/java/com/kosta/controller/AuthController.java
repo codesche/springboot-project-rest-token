@@ -1,8 +1,15 @@
 package com.kosta.controller;
 
 import java.util.List;
+import java.util.Map;
 
-import com.kosta.domain.*;
+import com.kosta.domain.request.SignUpRequest;
+import com.kosta.domain.request.UserDeleteRequest;
+import com.kosta.domain.request.UserUpdateRequest;
+import com.kosta.domain.response.LoginResponse;
+import com.kosta.domain.response.UserResponse;
+import com.kosta.util.TokenUtils;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,6 +33,27 @@ import lombok.extern.slf4j.Slf4j;
 @RequiredArgsConstructor
 public class AuthController {
 	private final AuthService authService;
+	private final TokenUtils tokenUtils;
+
+	// 리프레시 토큰 발급
+	@PostMapping("/refresh-token")
+	public ResponseEntity<LoginResponse> refreshToken(HttpServletRequest request, HttpServletResponse response) {
+		// 토큰 요청
+		Map<String, String> tokenMap = authService.refreshToken(request);
+
+		// 토큰 재발급 불가인 경우 401 에러 반환
+		if (tokenMap == null) {
+			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(null);
+		}
+
+		// 헤더 Cookie로 refresh 토큰 재발급
+		tokenUtils.setRefreshTokenCookie(response, tokenMap.get("refreshToken"));
+
+		// 응답 Body로 access 토큰 재발급
+		return ResponseEntity.ok(LoginResponse.builder()
+				.accessToken(tokenMap.get("refreshToken"))
+				.build());
+	}
 	
 	// 회원가입
 	@PostMapping("/signup")
