@@ -1,4 +1,4 @@
-package com.kosta.domain;
+package com.kosta.domain.request;
 
 import lombok.Getter;
 import lombok.ToString;

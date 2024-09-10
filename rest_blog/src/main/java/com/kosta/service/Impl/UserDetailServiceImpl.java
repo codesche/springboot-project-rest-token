@@ -1,4 +1,4 @@
-package com.kosta.service;
+package com.kosta.service.Impl;
 
 import com.kosta.entity.User;
 import com.kosta.repository.UserRepository;

@@ -4,8 +4,8 @@ import java.util.List;
 
 import org.springframework.web.multipart.MultipartFile;
 
-import com.kosta.domain.PostRequest;
-import com.kosta.domain.PostResponse;
+import com.kosta.domain.request.PostRequest;
+import com.kosta.domain.response.PostResponse;
 
 public interface PostService {
 

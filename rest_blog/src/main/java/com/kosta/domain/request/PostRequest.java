@@ -1,4 +1,4 @@
-package com.kosta.domain;
+package com.kosta.domain.request;
 
 import com.kosta.entity.ImageFile;
 import com.kosta.entity.Post;

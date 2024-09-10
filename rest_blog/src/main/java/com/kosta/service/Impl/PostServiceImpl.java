@@ -1,13 +1,15 @@
-package com.kosta.service;
+package com.kosta.service.Impl;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import com.kosta.service.ImageFileService;
+import com.kosta.service.PostService;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.kosta.domain.PostRequest;
-import com.kosta.domain.PostResponse;
+import com.kosta.domain.request.PostRequest;
+import com.kosta.domain.response.PostResponse;
 import com.kosta.entity.ImageFile;
 import com.kosta.entity.Post;
 import com.kosta.entity.User;

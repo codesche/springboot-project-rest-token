@@ -53,7 +53,8 @@ public class User implements UserDetails {
 	private RoleEnum role = RoleEnum.ROLE_USER;			// 권한 컬럼 추가 (기본값 ROLE_USER)
 
 	// 나중에 refresh_token을 저장하도록 변경할 예정
-
+	@Column(name = "refresh_token", nullable = true)
+	private String refreshToken;
 
 	// Override - UserDetail
 	@Override

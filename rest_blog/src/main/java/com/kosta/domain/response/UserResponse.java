@@ -1,4 +1,4 @@
-package com.kosta.domain;
+package com.kosta.domain.response;
 
 import com.kosta.entity.User;
 

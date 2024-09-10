@@ -1,7 +1,8 @@
-package com.kosta.domain;
+package com.kosta.domain.response;
 
 import java.time.format.DateTimeFormatter;
 
+import com.kosta.domain.FileDTO;
 import com.kosta.entity.Post;
 
 import lombok.Builder;
