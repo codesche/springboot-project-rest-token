@@ -16,9 +16,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.kosta.domain.ErrorResponse;
-import com.kosta.domain.FavoriteRequest;
-import com.kosta.domain.FavoriteResponse;
+import com.kosta.domain.response.ErrorResponse;
+import com.kosta.domain.request.FavoriteRequest;
+import com.kosta.domain.response.FavoriteResponse;
 import com.kosta.service.FavoriteService;
 
 import jakarta.servlet.http.HttpServletRequest;
