@@ -1,4 +1,4 @@
-package com.kosta.config;
+package com.kosta.security;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
