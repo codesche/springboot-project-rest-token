@@ -19,7 +19,7 @@ import lombok.extern.slf4j.Slf4j;
 public class AuthServiceImpl implements AuthService {
 	private final UserRepository userRepository;
 	private final BCryptPasswordEncoder bCryptPasswordEncoder;
-	private final JwtProvider jwtProvider;
+//	private final JwtProvider jwtProvider;
 
 	@Override
 	public UserResponse signUp(SignUpRequest signUpRequest) {
@@ -71,20 +71,20 @@ public class AuthServiceImpl implements AuthService {
 		return !userRepository.existsByEmail(email);
 	}
 
-	@Override
-	public LoginResponse login(String email, String password) {
-		User user = userRepository.findByEmail(email)
-				.orElseThrow(() -> new IllegalArgumentException("없는 이메일"));
-		// bCryptPasswordEncoder.matches(원문, 평문);
-		boolean matchedPassword = bCryptPasswordEncoder.matches(password, user.getPassword());
-
-		if (!matchedPassword) {
-			throw new RuntimeException("비밀번호 불일치");
-		}
-
-		String accessToken = jwtProvider.generateAccessToken(user);
-
-		return LoginResponse.builder()
-				.accessToken(accessToken).build();
-	}
+//	@Override
+//	public LoginResponse login(String email, String password) {
+//		User user = userRepository.findByEmail(email)
+//				.orElseThrow(() -> new IllegalArgumentException("없는 이메일"));
+//		// bCryptPasswordEncoder.matches(원문, 평문);
+//		boolean matchedPassword = bCryptPasswordEncoder.matches(password, user.getPassword());
+//
+//		if (!matchedPassword) {
+//			throw new RuntimeException("비밀번호 불일치");
+//		}
+//
+//		String accessToken = jwtProvider.generateAccessToken(user);
+//
+//		return LoginResponse.builder()
+//				.accessToken(accessToken).build();
+//	}
 }
