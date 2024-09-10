@@ -1,4 +1,4 @@
-package com.kosta.domain;
+package com.kosta.domain.request;
 
 import com.kosta.entity.Favorite;
 import com.kosta.entity.ImageFile;
