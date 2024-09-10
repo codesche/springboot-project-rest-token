@@ -36,12 +36,12 @@ public class AuthController {
 	}
 
 	// 로그인
-	@PostMapping("/login")
-	public ResponseEntity<LoginResponse> login(@RequestBody LoginRequest loginRequest, HttpServletResponse response) {
-		log.info("[login] 로그인 시도, user : {}", loginRequest);
-		LoginResponse loginResponse = authService.login(loginRequest.getEmail(), loginRequest.getPassword());
-		return ResponseEntity.ok(loginResponse);
-	}
+//	@PostMapping("/login")
+//	public ResponseEntity<LoginResponse> login(@RequestBody LoginRequest loginRequest, HttpServletResponse response) {
+//		log.info("[login] 로그인 시도, user : {}", loginRequest);
+//		LoginResponse loginResponse = authService.login(loginRequest.getEmail(), loginRequest.getPassword());
+//		return ResponseEntity.ok(loginResponse);
+//	}
 
 	
 	@GetMapping("/duplicate")
