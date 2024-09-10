@@ -1,12 +1,14 @@
-package com.kosta.service;
+package com.kosta.service.Impl;
 
 import java.util.List;
 
+import com.kosta.service.FavoriteService;
+import com.kosta.service.ImageFileService;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.kosta.domain.FavoriteRequest;
-import com.kosta.domain.FavoriteResponse;
+import com.kosta.domain.request.FavoriteRequest;
+import com.kosta.domain.response.FavoriteResponse;
 import com.kosta.entity.Favorite;
 import com.kosta.entity.ImageFile;
 import com.kosta.repository.FavoriteRepository;
