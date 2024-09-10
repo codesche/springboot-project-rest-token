@@ -1,4 +1,4 @@
-package com.kosta.config;
+package com.kosta.security;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -13,4 +13,5 @@ public class JwtProperties {
     private String issuer;
     private String secretKey;
     private int accessDuration;
+    private int refreshDuration;
 }
