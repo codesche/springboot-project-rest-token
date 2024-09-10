@@ -1,5 +1,6 @@
-package com.kosta.service;
+package com.kosta.service.Impl;
 
+import com.kosta.service.ImageFileService;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
