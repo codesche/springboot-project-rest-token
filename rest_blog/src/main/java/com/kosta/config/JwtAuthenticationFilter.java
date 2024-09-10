@@ -29,7 +29,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         String header  = request.getHeader(HEADER_AUTHORIZATION);
         String token = getAccessToken(header);
         log.info("순수한 토큰 {}", token);
-        if (jwtProvider.validToken(token)) {
+        if (token != null && jwtProvider.validToken(token)) {
             // 유효한 토큰인 경우
             Authentication authentication = jwtProvider.getAuthenticationByToken(token);
             SecurityContextHolder.getContext().setAuthentication(authentication);
