@@ -1,7 +1,7 @@
-package com.kosta.config;
+package com.kosta.security;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.kosta.domain.LoginRequest;
+import com.kosta.domain.request.LoginRequest;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -21,7 +21,7 @@ public class LoginCustomAuthenticationFilter extends AbstractAuthenticationProce
     private JwtAuthenticationService jwtAuthenticationService;
     private static final AntPathRequestMatcher LOGIN_PATH = new AntPathRequestMatcher("/api/auth/login", "POST");
 
-    protected LoginCustomAuthenticationFilter(AuthenticationManager authenticationManager,
+    public LoginCustomAuthenticationFilter(AuthenticationManager authenticationManager,
                                               JwtAuthenticationService jwtAuthenticationService) {
         super(LOGIN_PATH);
         setAuthenticationManager(authenticationManager);
