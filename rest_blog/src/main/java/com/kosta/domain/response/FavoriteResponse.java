@@ -1,5 +1,6 @@
-package com.kosta.domain;
+package com.kosta.domain.response;
 
+import com.kosta.domain.FileDTO;
 import com.kosta.entity.Favorite;
 
 import lombok.Builder;
