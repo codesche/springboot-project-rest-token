@@ -16,5 +16,5 @@ public interface AuthService {
 
 	boolean duplicateCheckEmail(String email);
 
-    LoginResponse login(String email, String password);
+//    LoginResponse login(String email, String password);
 }
