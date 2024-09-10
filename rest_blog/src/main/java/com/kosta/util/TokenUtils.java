@@ -1,11 +1,13 @@
 package com.kosta.util;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.kosta.config.JwtProvider;
-import com.kosta.domain.LoginResponse;
+import com.kosta.security.JwtProvider;
+import com.kosta.domain.response.LoginResponse;
 import com.kosta.entity.User;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
@@ -21,9 +23,11 @@ public class TokenUtils {
     // 토큰 생성
     public Map<String, String> generateToken(User user) {
         String accessToken = jwtProvider.generateAccessToken(user);
+        String refreshToken = jwtProvider.generateRefreshToken(user);
 
         Map<String, String> tokenMap = new HashMap<>();
         tokenMap.put("accessToken", accessToken);
+        tokenMap.put("refreshToken", refreshToken);
         return tokenMap;
     }
 
@@ -37,4 +41,12 @@ public class TokenUtils {
         response.getWriter().write(jsonResponse);
     }
 
+    public void setRefreshTokenCookie(HttpServletResponse response, String refreshToken) {
+        Cookie refreshTokenCookie = new Cookie("refreshToken", refreshToken);
+        refreshTokenCookie.setHttpOnly(true);               // JavaScript에서 변경 불가
+        refreshTokenCookie.setSecure(false);                // HTTPS가 아니어도 사용 가능!!! (실제는 true로 해줘야 함!)
+        refreshTokenCookie.setPath("/");                    // 다 쓰인다
+        refreshTokenCookie.setMaxAge(1 * 24 * 60 * 60);     // Token 유효기간 1일
+        response.addCookie(refreshTokenCookie);
+    }
 }
