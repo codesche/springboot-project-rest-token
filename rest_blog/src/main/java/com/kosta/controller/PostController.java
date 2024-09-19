@@ -8,9 +8,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.util.UriUtils;
 
@@ -125,4 +124,32 @@ public class PostController {
 						.build()
 				);
 	}
+
+	// id 값에 따라 표시
+	@GetMapping("/news/{id}")
+	public ResponseEntity<String> getNewsById(@PathVariable("id") int id) {
+		// RestTemplate 인스턴스를 하나 생성
+		RestTemplate rt = new RestTemplate();
+
+		// 헤더 인스턴스 생성
+		HttpHeaders headers = new HttpHeaders();
+
+		// header 적용
+		headers.add("Content-Type", "application/json; charset=UTF-8");
+		HttpEntity<String> httpEntity = new HttpEntity<>(headers);
+
+		// URL 주소 만들기
+		String url = "https://jsonplaceholder.typicod.com/posts/" + id;
+
+		try {
+//			ResponseEntity<String> result = rt.getForEntity(url, String.class);
+			ResponseEntity<String> result = rt.exchange(url, HttpMethod.GET, httpEntity, String.class);
+			return result;
+		} catch (Exception e) {
+			return ResponseEntity
+					.status(HttpStatus.INTERNAL_SERVER_ERROR)
+					.headers(headers).body("에러!");
+		}
+	}
+
 }

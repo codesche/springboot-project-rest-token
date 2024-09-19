@@ -72,7 +72,7 @@ public class WebSecurityConfig {
                 new AntPathRequestMatcher("/api/auth/duplicate"),           // 이메일 중복체크
                 new AntPathRequestMatcher("/img/**"),                       // 이미지
                 new AntPathRequestMatcher("/api/auth/refresh-token"),       // 토큰 재발급
-                new AntPathRequestMatcher("/api/post", "GET")
+                new AntPathRequestMatcher("/api/post/**", "GET")
             ).permitAll()
             // AuthController 중 나머지들은 "ADMIN"만 가능
             .requestMatchers(
